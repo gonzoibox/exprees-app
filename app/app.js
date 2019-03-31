@@ -4,16 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
+
+//Set up mongoose connection
 var mongoose = require('mongoose');
-
-//Set up default mongoose connection
-var mongoDB = 'mongodb://localhost/my_database';
+var mongoDB = 'mongodb+srv://hunter:dasefx14@cluster0-b2a2z.mongodb.net/test?retryWrites=true';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
-
-//Get the default connection
 var db = mongoose.connection;
-
-//Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
