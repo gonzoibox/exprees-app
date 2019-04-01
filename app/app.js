@@ -7,7 +7,7 @@ var sassMiddleware = require('node-sass-middleware');
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb+srv://hunter:NcnCXf3xnyNfcv#x@cluster0-b2a2z.mongodb.net/test?retryWrites=true';
+var mongoDB = 'mongodb://localhost/test';
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
